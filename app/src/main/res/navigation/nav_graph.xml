@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/fragmentSearchLocations">
+
+    <fragment
+        android:id="@+id/fragmentSearchLocations"
+        android:name="com.nikita.weathercleanarch.presentation.LocationsSearchFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_search_locations" >
+        <action
+            android:id="@+id/action_fragmentSearchLocations_to_fragmentWeather"
+            app:destination="@id/fragmentWeather" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentWeather"
+        android:name="com.nikita.weathercleanarch.presentation.FragmentWeather"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_weather" />
+</navigation>

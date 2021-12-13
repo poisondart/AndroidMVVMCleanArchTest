@@ -1,4 +1,4 @@
-package com.nikita.weathercleanarch.main
+package com.nikita.weathercleanarch.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
