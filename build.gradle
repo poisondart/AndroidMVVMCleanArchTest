@@ -24,4 +24,5 @@ ext {
     nav_version = '2.3.5'
     appcompat_version = '1.4.0'
     material_version = '1.4.0'
+    timber_version = '5.0.1'
 }
