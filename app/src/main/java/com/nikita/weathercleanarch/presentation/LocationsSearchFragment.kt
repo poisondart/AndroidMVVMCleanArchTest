@@ -18,6 +18,10 @@ import timber.log.Timber
 
 class LocationsSearchFragment : Fragment() {
 
+    interface LocationClickListener {
+        fun onLocationClicked(woeid: Int)
+    }
+
     private val locationsAdapter = LocationsAdapter()
 
     private val timberTag = this::class.java.simpleName
@@ -41,7 +45,7 @@ class LocationsSearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         locationsAdapter.actionListener = object : LocationsAdapter.ActionClickListener {
             override fun onItemClicked(location: Location) {
-
+                (activity as? LocationClickListener)?.onLocationClicked(location.woeid)
             }
         }
 

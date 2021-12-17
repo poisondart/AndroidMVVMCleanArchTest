@@ -33,6 +33,8 @@ class WeatherViewModel(
 
     private var _job: Job? = null
 
+    private var woeid = 0
+
     fun stopSearch() {
         _job?.cancel()
     }
@@ -54,6 +56,8 @@ class WeatherViewModel(
     }
 
     fun getWeather(woeid: Int) {
+        if (this.woeid == woeid) return
+        this.woeid = woeid
         viewModelScope.launch {
             _weatherDataLoading.postValue(true)
             when(val weatherResult = getWeatherUseCase.invoke(woeid)) {

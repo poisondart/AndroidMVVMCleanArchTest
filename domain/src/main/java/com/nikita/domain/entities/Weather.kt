@@ -4,5 +4,6 @@ data class Weather(
     val id: Long,
     val weather_state_name: String,
     val weather_state_abbr: String,
-    val applicable_date: String
+    val applicable_date: String,
+    val the_temp: Double
 )

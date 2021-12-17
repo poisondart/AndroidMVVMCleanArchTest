@@ -8,6 +8,6 @@ interface WeatherApi {
     @GET("api/location/search/")
     suspend fun getLocations(@Query("query") query: String): Response<List<Location>>
 
-    @GET("api/location/woeid/")
+    @GET("api/location/{woeid}/")
     suspend fun getWeather(@Path("woeid") woeid: Int): Response<Location>
 }
