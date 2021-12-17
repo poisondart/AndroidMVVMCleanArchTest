@@ -27,9 +27,9 @@ class WeatherAdapter: RecyclerView.Adapter<WeatherAdapter.WeatherViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: WeatherViewHolder, position: Int) {
-        holder.weatherState.text = weather[position].weather_state_name
-        holder.temp.text = weather[position].the_temp.toString()
-        holder.date.text = weather[position].applicable_date
+        holder.weatherState.text = holder.itemView.context.getString(R.string.weather, weather[position].weather_state_name)
+        holder.temp.text = holder.itemView.context.getString(R.string.temperature, weather[position].the_temp.toString())
+        holder.date.text = holder.itemView.context.getString(R.string.date, weather[position].applicable_date)
     }
 
     override fun getItemCount(): Int {
