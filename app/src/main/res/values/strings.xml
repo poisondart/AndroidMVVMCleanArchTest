@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">WeatherCleanArch</string>
-    <string name="hint">Введите название места</string>
+    <string name="hint">Название места</string>
+    <string name="error_occurred">Произошла ошибка</string>
 </resources>

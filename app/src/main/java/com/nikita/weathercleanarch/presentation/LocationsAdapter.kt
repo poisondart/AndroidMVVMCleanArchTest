@@ -1,5 +1,6 @@
 package com.nikita.weathercleanarch.presentation
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,10 +19,12 @@ class LocationsAdapter : RecyclerView.Adapter<LocationsAdapter.LocationsViewHold
     private var locations = mutableListOf<Location>()
     var actionListener: ActionClickListener? = null
 
+    @SuppressLint("NotifyDataSetChanged")
     fun updateData(locations: List<Location>) {
         if (locations.isEmpty()) return
         this.locations.clear()
         this.locations.addAll(locations)
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LocationsViewHolder {
